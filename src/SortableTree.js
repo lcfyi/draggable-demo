@@ -35,11 +35,6 @@ export default class SortTree extends Component {
       ],
     };
   }
-  
-
-  updateTreeData(treeData) {
-    this.setState({ treeData });
-  }
 
   removeNode = (path) => {
     this.setState((state) => ({
@@ -96,8 +91,6 @@ export default class SortTree extends Component {
               <Tab.Pane>
                 <div style={{ height: "60vh" }}>
                   <SortableTree
-                    onChange={this.updateTreeData}
-                    expa
                     treeData={treeData}
                     dndType={externalNodeType}
                     canDrop={this.canDrop}
