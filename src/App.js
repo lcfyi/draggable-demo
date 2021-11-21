@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import SortTree from "./SortableTree";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import { DndProvider } from "react-dnd";
+import { ExternalNodeContainer } from "./ExternalNode";
+import { Divider, Container, Header } from "semantic-ui-react";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DndProvider backend={HTML5Backend}>
+      <Container>
+        <Header as="h1" style={{ paddingTop: 10 }}>
+          City Grouping Demo
+        </Header>
+        <Divider />
+        <ExternalNodeContainer />
+        <Divider />
+        <SortTree />
+      </Container>
+    </DndProvider>
   );
 }
 
