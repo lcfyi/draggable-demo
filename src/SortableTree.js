@@ -9,32 +9,27 @@ import { Button, Tab } from "semantic-ui-react";
 import { externalNodeType } from "./ExternalNode";
 
 export default class SortTree extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      currentNode: {},
-      treeData: [
-        {
-          title: "Root Group",
-          editable: false,
-          childable: true,
-          deletable: false,
-          expanded: true,
-          children: [
-            {
-              title: "",
-              editable: true,
-              childable: true,
-              deletable: true,
-              expanded: true,
-              children: [],
-            },
-          ],
-        },
-      ],
-    };
-  }
+  state = {
+    treeData: [
+      {
+        title: "Root Group",
+        editable: false,
+        childable: true,
+        deletable: false,
+        expanded: true,
+        children: [
+          {
+            title: "",
+            editable: true,
+            childable: true,
+            deletable: true,
+            expanded: true,
+            children: [],
+          },
+        ],
+      },
+    ],
+  };
 
   removeNode = (path) => {
     this.setState((state) => ({
@@ -44,10 +39,6 @@ export default class SortTree extends Component {
         getNodeKey: ({ treeIndex }) => treeIndex,
       }),
     }));
-  };
-
-  selectThis = (node, path) => {
-    this.setState({ currentNode: node, path: path });
   };
 
   insertNewNode = (path) => {
@@ -97,13 +88,7 @@ export default class SortTree extends Component {
                     onChange={(treeData) => this.setState({ treeData })}
                     generateNodeProps={({ node, path }) => ({
                       title: (
-                        <form
-                          onClick={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            this.selectThis(node, path);
-                          }}
-                        >
+                        <span>
                           {node.editable === true ||
                           node.editable === undefined ? (
                             <input
@@ -122,41 +107,42 @@ export default class SortTree extends Component {
                               }}
                             />
                           ) : (
-                            <span>{node.title}</span>
+                            node.title
                           )}
-                          &nbsp;&nbsp;&nbsp;
-                          {node.childable ? (
-                            <span>
-                              <Button
-                                size="mini"
-                                color="blue"
-                                circular
-                                icon="add"
-                                onClick={(e) => {
-                                  e.preventDefault();
-                                  e.stopPropagation();
-                                  this.insertNewNode(path);
-                                }}
-                              />
-                              {node.deletable &&
-                              node.children &&
-                              !node.children.length ? (
-                                <Button
-                                  size="mini"
-                                  color="blue"
-                                  circular
-                                  icon="trash"
-                                  onClick={(e) => {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                    this.removeNode(path);
-                                  }}
-                                />
-                              ) : undefined}
-                            </span>
-                          ) : undefined}
-                        </form>
+                        </span>
                       ),
+                      buttons: [
+                        node.childable ? (
+                          <span>
+                            <Button
+                              size="mini"
+                              color="blue"
+                              circular
+                              icon="add"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                this.insertNewNode(path);
+                              }}
+                            />
+                          </span>
+                        ) : undefined,
+                        node.deletable &&
+                        node.children &&
+                        !node.children.length ? (
+                          <Button
+                            size="mini"
+                            color="blue"
+                            circular
+                            icon="trash"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              this.removeNode(path);
+                            }}
+                          />
+                        ) : undefined,
+                      ],
                     })}
                   />
                 </div>
