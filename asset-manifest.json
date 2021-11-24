@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.js": "/draggable-demo/static/js/main.7fde9a90.chunk.js",
-    "main.js.map": "/draggable-demo/static/js/main.7fde9a90.chunk.js.map",
+    "main.js": "/draggable-demo/static/js/main.9f5d84ac.chunk.js",
+    "main.js.map": "/draggable-demo/static/js/main.9f5d84ac.chunk.js.map",
     "runtime-main.js": "/draggable-demo/static/js/runtime-main.c6d146f7.js",
     "runtime-main.js.map": "/draggable-demo/static/js/runtime-main.c6d146f7.js.map",
     "static/css/2.7d471a2e.chunk.css": "/draggable-demo/static/css/2.7d471a2e.chunk.css",
-    "static/js/2.35466600.chunk.js": "/draggable-demo/static/js/2.35466600.chunk.js",
-    "static/js/2.35466600.chunk.js.map": "/draggable-demo/static/js/2.35466600.chunk.js.map",
+    "static/js/2.8b02db75.chunk.js": "/draggable-demo/static/js/2.8b02db75.chunk.js",
+    "static/js/2.8b02db75.chunk.js.map": "/draggable-demo/static/js/2.8b02db75.chunk.js.map",
     "index.html": "/draggable-demo/index.html",
     "static/css/2.7d471a2e.chunk.css.map": "/draggable-demo/static/css/2.7d471a2e.chunk.css.map",
-    "static/js/2.35466600.chunk.js.LICENSE.txt": "/draggable-demo/static/js/2.35466600.chunk.js.LICENSE.txt",
+    "static/js/2.8b02db75.chunk.js.LICENSE.txt": "/draggable-demo/static/js/2.8b02db75.chunk.js.LICENSE.txt",
     "static/media/semantic.min.css": "/draggable-demo/static/media/outline-icons.ddae9b1b.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.c6d146f7.js",
     "static/css/2.7d471a2e.chunk.css",
-    "static/js/2.35466600.chunk.js",
-    "static/js/main.7fde9a90.chunk.js"
+    "static/js/2.8b02db75.chunk.js",
+    "static/js/main.9f5d84ac.chunk.js"
   ]
 }
